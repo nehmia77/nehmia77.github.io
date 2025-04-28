@@ -1,0 +1,1432 @@
+/* Basic Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Prevents extra space below image */
+}
+
+/* Header & Navigation */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    position: sticky; /* Optional: make header sticky */
+    top: 0;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem; /* Space between links */
+}
+
+nav ul li a {
+    font-size: 1rem;
+    color: #555;
+    padding: 0.5rem 0; /* Add padding for easier clicking */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #0056b3;
+    font-weight: bold; /* Highlight active/hover */
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://imgur.com/zWw9Y5K.png') no-repeat center center/cover;
+    color: #ffffff;
+    text-align: center;
+    padding: 6rem 0;
+    position: relative; /* For pseudo-element overlay */
+}
+
+/* Optional overlay for better text readability */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative; /* Ensure content is above overlay */
+    z-index: 2;
+}
+
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    color: #ffffff; /* Ensure text remains white */
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #ffffff;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+.btn-outline:hover {
+     background-color: #007bff;
+     color: #ffffff;
+     text-decoration: none;
+}
+
+
+/* Introduction to Products Section */
+.intro-products {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.intro-products h2 {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.product-showcase {
+    display: flex;
+    justify-content: space-around; /* Adjust as needed */
+    gap: 2rem; /* Space between cards */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.product-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: calc(33% - 2rem); /* Adjust width, considering gap */
+    min-width: 250px; /* Minimum width before wrapping */
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensure image covers area */
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.product-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.view-all-link {
+    margin-top: 2.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    padding: 3rem 0;
+    margin-top: 3rem; /* Space above footer */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-content > div {
+    flex: 1; /* Allow divs to grow */
+    min-width: 200px; /* Minimum width before stacking */
+}
+
+footer h3, footer p strong {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+footer p, footer a {
+    color: #adb5bd;
+    font-size: 0.9rem;
+}
+
+footer a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.social-media a {
+    margin-right: 0.8rem;
+    display: inline-block; /* Correct alignment */
+}
+.social-media img {
+    width: 24px; /* Adjust icon size */
+    height: 24px;
+    vertical-align: middle; /* Align icons properly */
+    filter: invert(75%) sepia(11%) saturate(280%) hue-rotate(170deg) brightness(95%) contrast(88%); /* Adjust color to match theme */
+    transition: filter 0.3s ease;
+}
+.social-media a:hover img {
+    filter: invert(100%) sepia(0%) saturate(7463%) hue-rotate(10deg) brightness(113%) contrast(101%); /* White on hover */
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #495057;
+    font-size: 0.85rem;
+    color: #adb5bd;
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .product-card {
+        width: calc(50% - 1.5rem); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+
+    header nav {
+        flex-direction: column; /* Stack logo and nav links */
+        align-items: flex-start;
+    }
+    nav ul {
+       flex-direction: column; /* Stack nav links */
+       margin-top: 1rem;
+       gap: 0.5rem; /* Reduce gap for vertical layout */
+       width: 100%; /* Make list take full width */
+    }
+     nav ul li {
+        width: 100%; /* Make each link container full width */
+        text-align: left; /* Align text left */
+    }
+     nav ul li a {
+        display: block; /* Make link fill the li */
+        padding: 0.5rem 0;
+    }
+
+    .product-showcase {
+        flex-direction: column; /* Stack product cards */
+        align-items: center; /* Center cards when stacked */
+    }
+
+    .product-card {
+        width: 90%; /* Make cards wider on small screens */
+        max-width: 400px; /* Optional max width */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start; /* Align items left when stacked */
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero {
+        padding: 4rem 0;
+    }
+    .container {
+        padding: 0 15px; /* Reduce padding on very small screens */
+    }
+    .logo a {
+        font-size: 1.5rem;
+    }
+}
+/* --- About Us Page Styles --- */
+
+/* General Page Title Section */
+.page-title-section {
+    background-color: #e9ecef; /* Light grey background */
+    padding: 2rem 0;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-title-section h1 {
+    font-size: 2.5rem;
+    color: #343a40; /* Darker heading color */
+    margin-bottom: 0.5rem;
+}
+
+.page-title-section p {
+    font-size: 1.1rem;
+    color: #6c757d; /* Muted text color */
+}
+
+/* Company Description Section */
+.company-description {
+    margin-bottom: 3rem;
+}
+
+.company-description h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.description-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center; /* Vertically align image and text */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.description-image {
+    flex: 1; /* Take up available space */
+    max-width: 40%; /* Limit image width */
+    min-width: 280px; /* Minimum width before stacking */
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.description-content > div {
+    flex: 1.5; /* Allow text to take more space */
+    min-width: 300px; /* Minimum width for text content */
+}
+
+.description-content p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #555;
+}
+.description-content p strong {
+    color: #0056b3; /* Highlight keywords */
+}
+
+/* Team Members Section */
+.team-members {
+    background-color: #ffffff; /* White background for contrast */
+    padding: 3rem 0;
+    margin-bottom: 3rem;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.team-members h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    color: #333;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive grid */
+    gap: 2rem;
+}
+
+.team-card {
+    text-align: center;
+    background-color: #f9f9f9; /* Light background for card */
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.team-card img {
+    width: 120px; /* Fixed image size */
+    height: 120px;
+    border-radius: 50%; /* Circular images */
+    object-fit: cover;
+    margin: 0 auto 1rem auto; /* Center image */
+    border: 3px solid #ffffff; /* Optional border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.team-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.25rem;
+    color: #333;
+}
+
+.team-card .position {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #007bff; /* Highlight position */
+    margin-bottom: 0.75rem;
+}
+
+.team-card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Company Milestones Section */
+.company-milestones {
+    margin-bottom: 3rem;
+}
+
+.company-milestones h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.milestones-list {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+    position: relative; /* For pseudo-element line */
+    max-width: 600px; /* Limit width for readability */
+    margin: 0 auto; /* Center the list */
+}
+
+/* Optional: Add a visual timeline line */
+.milestones-list::before {
+    content: '';
+    position: absolute;
+    left: 10px; /* Adjust position */
+    top: 5px;
+    bottom: 5px;
+    width: 4px;
+    background-color: #007bff; /* Timeline color */
+    border-radius: 2px;
+}
+
+.milestones-list li {
+    padding-left: 30px; /* Space for the bullet and line */
+    margin-bottom: 1.5rem;
+    position: relative; /* For custom bullet */
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Custom bullet */
+.milestones-list li::before {
+    content: '';
+    position: absolute;
+    left: 2px; /* Align with the line */
+    top: 5px; /* Adjust vertical alignment */
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff; /* Bullet background */
+    border: 3px solid #007bff; /* Bullet border */
+    border-radius: 50%;
+    z-index: 1; /* Ensure bullet is above the line */
+}
+
+.milestones-list li strong {
+    color: #333;
+    display: block; /* Put year on its own line or make it stand out */
+    margin-bottom: 0.25rem;
+}
+
+/* Responsive adjustments for About Us elements */
+@media (max-width: 768px) {
+    .description-content {
+        flex-direction: column; /* Stack image and text */
+        text-align: center;
+    }
+    .description-image {
+        max-width: 80%; /* Allow image to be wider when stacked */
+        margin-bottom: 1.5rem;
+    }
+    .description-content > div {
+         text-align: left; /* Keep text left-aligned */
+    }
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust grid for smaller screens */
+    }
+    .milestones-list::before {
+        left: 5px; /* Adjust line position */
+    }
+     .milestones-list li::before {
+        left: -3px; /* Adjust bullet position */
+     }
+}
+/* --- Catalogue Page Styles --- */
+
+.catalogue-section {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap; /* Allow filters to stack above list on smaller screens */
+}
+
+/* Filters / Categories */
+.filters {
+    flex: 0 0 200px; /* Fixed width for filter sidebar */
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    height: fit-content; /* Make height adjust to content */
+}
+
+.filters h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+
+.filter-btn {
+    display: block; /* Make buttons stack vertically */
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    text-align: left;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #495057;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.filter-btn:hover {
+    background-color: #e9ecef;
+    color: #343a40;
+}
+
+.filter-btn.active {
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #007bff;
+    font-weight: bold;
+}
+
+/* Product List */
+.product-list {
+    flex: 1; /* Take remaining space */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 1.5rem;
+}
+
+.product-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Use flexbox for better control */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: space-between; /* Push button to bottom */
+}
+
+.product-item.hidden { /* Class to hide items via JS */
+    display: none;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+    width: 100%;
+    height: 160px; /* Consistent image height */
+    object-fit: contain; /* Use contain to avoid cropping, or cover */
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.product-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    flex-grow: 1; /* Allow title to grow if description is short */
+}
+
+.product-item p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.75rem;
+    min-height: 40px; /* Give some space for description */
+}
+
+.product-item .price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #28a745; /* Green color for price */
+    margin-bottom: 1rem;
+    display: block; /* Ensure price is on its own line */
+}
+
+.product-item .learn-more-btn {
+    margin-top: auto; /* Push button to the bottom */
+    align-self: center; /* Center button horizontally */
+    /* Use btn-secondary styles already defined */
+}
+
+
+/* Modal Styles (Basic) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 1.5rem auto;
+}
+
+.modal-content h2 {
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+.modal-content p {
+    margin-bottom: 1rem;
+    color: #555;
+    font-size: 1rem;
+}
+.modal-content .price {
+     display: block;
+     text-align: center;
+     font-size: 1.3rem;
+     font-weight: bold;
+     color: #28a745;
+     margin-top: 1.5rem;
+}
+
+
+/* Responsive adjustments for Catalogue */
+@media (max-width: 768px) {
+    .catalogue-section {
+        flex-direction: column; /* Stack filters above products */
+    }
+    .filters {
+        flex: 0 0 auto; /* Allow filters section to take auto width */
+        width: 100%;
+        margin-bottom: 2rem;
+        display: flex; /* Arrange buttons horizontally on small screens */
+        flex-wrap: wrap; /* Allow buttons to wrap */
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+    .filters h2 {
+        width: 100%; /* Make title span full width */
+        text-align: center;
+        margin-bottom: 1rem;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+    .filter-btn {
+        width: auto; /* Allow buttons to size based on content */
+        display: inline-block; /* Align buttons horizontally */
+        margin-bottom: 0; /* Remove bottom margin */
+        padding: 0.5rem 1rem;
+    }
+    .product-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust grid */
+    }
+    .modal-content {
+        width: 90%;
+        margin: 15% auto;
+    }
+}
+
+@media (max-width: 576px) {
+     .product-list {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+        gap: 1rem;
+    }
+     .product-item {
+        padding: 1rem;
+     }
+}
+/* --- Ordering Page Styles --- */
+
+.order-page-section {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+#order-form {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-layout {
+    display: flex;
+    gap: 3rem; /* Space between columns */
+    flex-wrap: wrap; /* Wrap columns on smaller screens */
+}
+
+.form-column {
+    flex: 1; /* Each column takes equal space initially */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.form-column h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5rem;
+}
+
+/* Form Elements Styling */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Error message styling */
+.error-message {
+    color: #dc3545; /* Red color for errors */
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    display: none; /* Hidden by default */
+    font-weight: bold;
+}
+.form-group input.invalid,
+.form-group textarea.invalid {
+    border-color: #dc3545;
+}
+.form-group input.invalid:focus,
+.form-group textarea.invalid:focus {
+     box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+}
+
+
+/* Product Selection Area */
+#product-selection {
+    margin-bottom: 2rem;
+}
+
+.order-product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap; /* Wrap elements inside item if needed */
+    gap: 1rem;
+}
+.order-product-item:last-child {
+    border-bottom: none;
+}
+
+.order-product-item .product-name {
+    flex-basis: 40%; /* Adjust as needed */
+    font-weight: bold;
+}
+.order-product-item .product-price {
+    color: #666;
+     flex-basis: 20%;
+     text-align: right;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+     flex-basis: 30%;
+     justify-content: flex-end;
+}
+.quantity-control label {
+    margin-bottom: 0; /* Override default label margin */
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+.quantity-control input[type="number"] {
+    width: 60px; /* Smaller width for quantity input */
+    padding: 0.4rem;
+    text-align: center;
+}
+/* Hide spinner arrows on number inputs (optional) */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+    appearance: textfield; /* Firefox */
+}
+
+
+/* Order Summary */
+#order-summary {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    margin-top: 2rem;
+}
+
+#order-summary h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: none; /* Remove line from h2 inside summary */
+}
+
+#summary-items {
+    margin-bottom: 1.5rem;
+    max-height: 200px; /* Limit height and allow scrolling if needed */
+    overflow-y: auto;
+}
+#summary-items p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+}
+#summary-items span {
+    margin-left: 1rem; /* Space between item name and price */
+}
+
+
+.summary-totals {
+    border-top: 1px dashed #ccc;
+    padding-top: 1rem;
+}
+.summary-totals p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+.summary-totals p strong {
+    font-size: 1.1rem;
+    color: #333;
+}
+.summary-totals span {
+    font-weight: bold;
+}
+
+
+/* Form Actions */
+.form-actions {
+    text-align: right; /* Align button to the right */
+    margin-top: 2rem;
+}
+
+/* Confirmation Page Styles */
+.confirmation-details {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.confirmation-details h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+#confirmation-summary {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    text-align: left;
+    background-color: #f9f9f9;
+    display: inline-block; /* Center the block */
+    min-width: 300px;
+}
+#confirmation-summary p {
+    margin-bottom: 0.75rem;
+}
+#confirmation-summary span {
+    font-weight: normal;
+    color: #555;
+    margin-left: 0.5rem;
+}
+
+
+/* Responsive Adjustments for Order Page */
+@media (max-width: 992px) {
+    .order-layout {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .order-layout {
+        flex-direction: column; /* Stack columns */
+    }
+    .form-column {
+        min-width: 100%; /* Allow columns to take full width */
+    }
+    #order-form {
+        padding: 1.5rem;
+    }
+     .order-product-item .product-name {
+        flex-basis: 100%; /* Name takes full width */
+        margin-bottom: 0.5rem;
+    }
+    .order-product-item .product-price,
+    .order-product-item .quantity-control {
+        flex-basis: 48%; /* Roughly half width for price and qty */
+        justify-content: space-between;
+    }
+     .quantity-control {
+        justify-content: flex-end;
+     }
+}
+
+@media (max-width: 576px) {
+    .form-column h2 {
+        font-size: 1.4rem;
+    }
+     #order-form {
+        padding: 1rem;
+    }
+}
+/* --- Procurement & Management Page Styles --- */
+
+.management-section .container {
+    max-width: 1200px; /* Wider container for tables */
+}
+
+.management-block {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2.5rem;
+}
+
+.management-block h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.75rem;
+}
+
+/* Controls (Search, Filters, Buttons) */
+.controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap; /* Allow controls to wrap */
+    align-items: center;
+}
+
+.controls input[type="text"],
+.controls select {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    flex-grow: 1; /* Allow input to grow */
+    min-width: 180px; /* Minimum width */
+}
+.controls select {
+     flex-grow: 0; /* Don't let select grow too much */
+     min-width: 150px;
+}
+.controls button {
+    /* Use existing .btn styles */
+    padding: 0.6rem 1rem; /* Adjust padding slightly */
+}
+
+/* Table Styling */
+.table-responsive {
+    overflow-x: auto; /* Allow horizontal scrolling on small screens */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+table thead {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+}
+
+table th, table td {
+    padding: 0.9rem 0.75rem;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #dee2e6;
+}
+
+table th {
+    font-weight: bold;
+    color: #495057;
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Status Badges */
+.status {
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px; /* Pill shape */
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    min-width: 80px;
+}
+
+.status-Pending { background-color: #ffc107; color: #333; }
+.status-Approved { background-color: #17a2b8; }
+.status-Delivered { background-color: #28a745; }
+.status-Cancelled { background-color: #dc3545; }
+
+/* Action Buttons in Tables */
+table .action-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+    margin-right: 0.3rem;
+    cursor: pointer;
+     /* Use existing .btn styles, maybe smaller versions */
+}
+.action-btn.edit-btn { background-color: #007bff; color: white; border: none;}
+.action-btn.delete-btn { background-color: #dc3545; color: white; border: none;}
+.action-btn.update-status-btn { background-color: #6c757d; color: white; border: none;}
+.action-btn.update-stock-btn { background-color: #17a2b8; color: white; border: none;}
+
+
+/* Forms within management blocks */
+#add-order-form, #edit-supplier-form, #update-stock-form {
+    margin-top: 1rem;
+}
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap; /* Wrap form groups */
+}
+.form-row .form-group {
+    flex: 1; /* Allow form groups to grow */
+    min-width: 250px; /* Minimum width before wrapping */
+    margin-bottom: 0; /* Remove bottom margin since row handles spacing */
+}
+#add-order-form .form-actions,
+#edit-supplier-form .form-actions,
+#update-stock-form .form-actions {
+    text-align: left; /* Align buttons left in these forms */
+    margin-top: 1.5rem;
+}
+
+/* Feedback Messages */
+.feedback-message {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    display: none; /* Hidden by default */
+    font-weight: bold;
+}
+.feedback-message.success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; display: block;}
+.feedback-message.error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; display: block;}
+
+
+/* Modal styles adjustments (if needed, mostly reuse from catalogue modal) */
+#supplier-modal .modal-content,
+#stock-modal .modal-content {
+    max-width: 500px; /* Slightly smaller modals */
+}
+#supplier-modal .form-actions,
+#stock-modal .form-actions {
+    display: flex;
+    justify-content: flex-end; /* Align buttons right in modal */
+    gap: 1rem;
+}
+#stock-modal #stock-item-display-name {
+    font-size: 1.1rem;
+    color: #0056b3;
+}
+
+
+/* Responsive adjustments for Management page */
+@media (max-width: 768px) {
+    .management-block {
+        padding: 1.5rem;
+    }
+    .controls {
+        flex-direction: column;
+        align-items: stretch; /* Make controls take full width */
+    }
+    .controls input[type="text"],
+    .controls select,
+    .controls button {
+        width: 100%; /* Full width on small screens */
+    }
+    table {
+        font-size: 0.9rem;
+    }
+    table th, table td {
+        padding: 0.7rem 0.5rem;
+    }
+    .form-row {
+        flex-direction: column; /* Stack form groups */
+        gap: 1rem;
+        margin-bottom: 0;
+    }
+     .form-row .form-group {
+        margin-bottom: 1rem; /* Add margin back when stacked */
+     }
+}
+
+@media (max-width: 576px) {
+    .management-block h2 {
+        font-size: 1.5rem;
+    }
+     table th, table td {
+        white-space: nowrap; /* Prevent text wrapping in cells, rely on scroll */
+     }
+}
+/* --- Admin Dashboard Page Styles --- */
+
+.admin-section .container {
+    max-width: 1200px;
+}
+
+/* Analytics Grid */
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.metric-card {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.metric-card h3 {
+    font-size: 1.1rem;
+    color: #495057;
+    margin-bottom: 0.75rem;
+}
+
+.metric-card p {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+}
+.metric-card small {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* User Management Table */
+#admin-user-management .controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+#admin-user-management table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#admin-user-management table th,
+#admin-user-management table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+#admin-user-management table th {
+    background-color: #e9ecef;
+    font-weight: 600;
+    color: #343a40;
+}
+
+#admin-user-management table td {
+    color: #495057;
+}
+
+#admin-user-management table tr:hover {
+    background-color: #f1f3f5;
+}
+
+#admin-user-management table input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    color: #495057;
+}
+
+#admin-user-management table input[type="number"]::-webkit-outer-spin-button,
+#admin-user-management table input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* User Role Badge (Example) */
+.role-Admin { color: #dc3545; font-weight: bold; }
+.role-ProcurementManager { color: #fd7e14; }
+.role-Staff { color: #20c997; }
+.role-Viewer { color: #6c757d; }
+
+
+/* Modal styles adjustments (reuse from procurement) */
+#user-modal .modal-content {
+    max-width: 500px;
+}
+#user-modal .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+/* Basic Login Gate Styling */
+#admin-login-gate h2 {
+    color: #343a40;
+}
+#admin-login-gate p {
+    color: #6c757d;
+}
+#admin-login-gate small {
+    color: #adb5bd;
+}
+
+
+/* Responsive adjustments for Admin page */
+@media (max-width: 768px) {
+    .analytics-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+    .metric-card {
+        padding: 1rem;
+    }
+     .metric-card p {
+        font-size: 1.8rem;
+    }
+}
+@media (max-width: 576px) {
+     .analytics-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns on very small */
+    }
+     .metric-card h3 {
+        font-size: 1rem;
+     }
+}
